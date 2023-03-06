@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/run.js"></script>
+        
+    </head>
+<body onload = "disableScroll()">
+<div class = "d-print-none" media="print">
+<img id="start" src="bg/generator.png" alt = "ge">
+<input id="words" type="text" name="search" placeholder="">
+<button id="click" onclick="createimage()">Print</button>
+</div>
+
+<script>
+    var input = document.getElementById("words");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("click").click();
+      }
+    });
+</script>
+
+<!-- Image result should appear here -->
+<div id="container" media="screen">
+    <!-- Container for bg and img -->
+    <div id="master_container">
+        <img id="master" src="bg/master.jpg" alt = "bg">
+        <div id="title_container" media="print">Figures:</div>
+        <div id="index" media="print"></div>
+        <div id="description" media="print"></div>
+        <div id="svg_container">
+            <svg height="5" width="100%">
+            <line x1="2%" y1="0" x2="98%" y2="0" style="stroke:rgb(128, 129, 132);stroke-width:5"></line>
+            </svg>
+        </div>
+        <div id="inner_boundary"></div>
+        <div id="outter_boundary"></div>
+        <!-- Container for img -->
+        <div id="overlay_key"></div>
+    </div> 
+    
+</div>
+
+</body>
+</html>
